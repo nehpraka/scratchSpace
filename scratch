@@ -1,0 +1,1 @@
+gcloud storage buckets notifications create gs://test_bucket111111 --topic=driven-torus-387613_topic  

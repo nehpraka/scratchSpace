@@ -1,2 +1,13 @@
 https://cloud.google.com/storage/docs/reporting-changes#command-line
 gcloud storage buckets notifications create gs://test_bucket111111 --topic=driven-torus-387613_topic  
+
+
+
+https://stackoverflow.com/questions/70243237/how-to-know-if-the-pub-sub-topic-contains-messages-with-specific-content
+The solution I ended up with is as follows:
+
+create a set in redis, and add a new message id to it
+Include this new message id in the message published to the pubsub
+the cloud function that runs after the pubsub should remove the new message_id from the set
+by the end of the process, we check the set and if it is empty then the process is done.
+This also handle the times when pub/sub publish the same message more than once.

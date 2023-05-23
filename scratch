@@ -1,1 +1,2 @@
+https://cloud.google.com/storage/docs/reporting-changes#command-line
 gcloud storage buckets notifications create gs://test_bucket111111 --topic=driven-torus-387613_topic  
